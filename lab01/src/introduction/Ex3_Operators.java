@@ -94,7 +94,7 @@ public class Ex3_Operators {
         // 4. Operatorii bitwise
         // ---------------------------------------------------------
         // Folosim numerele a = 5 (0101) și b = 3 (0011) în reprezentare binară
-        int x = 5;   // 0101 în binar
+        int x = -5;   // 0101 în binar
         int y = 3;   // 0011 în binar
         int bitAnd = x & y;      // Bitwise AND: 0101 & 0011 = 0001 (1)
         int bitOr = x | y;       // Bitwise OR:  0101 | 0011 = 0111 (7)
