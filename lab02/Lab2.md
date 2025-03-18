@@ -22,7 +22,7 @@ O clasă conține următoarele componente:
 ### Referința `this`
 Cuvântul cheie `this` este utilizat pentru a face referire la obiectul curent. Acesta este folosit în special pentru:
 - A face distincție între variabilele de instanță și parametrii metodelor/constructorilor cu același nume.
-- Apele metode sau constructori ai clasei curente.
+- Apela metode sau constructori ai clasei curente.
 
 ## Modificatori de Acces
 Modificatorii de acces determină nivelul de vizibilitate și accesibilitate a metodelor și atributelor unei clase.
