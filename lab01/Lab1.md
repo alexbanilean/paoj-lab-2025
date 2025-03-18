@@ -57,3 +57,14 @@ Java este un limbaj de programare cunoscut pentru portabilitatea, securitatea ș
 - JVM = Java Virtual Machine - Interpretează bytecode-ul și asigură portabilitatea aplicațiilor.
 - JRE = Java Runtime Environment - Conține JVM, biblioteci de clase și alte componente necesare pentru rularea aplicațiilor Java.
 - JDK = Java Development Kit - Include JRE plus unelte de dezvoltare (compilatorul, debugger, documentație, etc.) și este necesar pentru dezvoltarea aplicațiilor Java.
+
+## Pregătire mediu de lucru
+
+- instalare Java 21: https://jdk.java.net/archive/ -> Java 21 GA
+- instalare IDE - IntelliJ IDEA: https://www.jetbrains.com/idea/download/
+- în IntelliJ IDEA creați un proiect Java nou și alegeți să folosiți JDK 21
+
+## Tutoriale
+
+- https://docs.oracle.com/javase/tutorial/index.html
+- https://www.tutorialspoint.com/java/
