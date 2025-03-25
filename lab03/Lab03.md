@@ -224,7 +224,7 @@ public class TestEquals {
 
 ---
 #### `hashCode()`
-Metoda `hashCode()` eturnează un cod hash (un număr întreg) pentru obiect. Este folosită în colecții precum `HashMap`, `HashSet` etc. 
+Metoda `hashCode()` returnează un cod hash (un număr întreg) pentru obiect. Este folosită în colecții precum `HashMap`, `HashSet` etc. 
 Regula importantă este că dacă două obiecte sunt considerate egale prin metoda `equals()`, atunci ele trebuie să returneze același hash code.
 Suprascrierea metodei `hashCode()` este esențială atunci când suprascriem `equals()`, pentru a menține contractul dintre aceste metode.
 
