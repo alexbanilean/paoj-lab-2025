@@ -31,7 +31,7 @@ class UtilitarString {
 public class Ex5_String_Regex {
     public static void main(String[] args) {
         String text1 = "Buna ziua";
-        String text2 = "1234Java";
+        String text2 = "Java#";
 
         // Testare regex
         System.out.println("Este valid '" + text1 + "' ? " + UtilitarString.esteValid(text1)); // true
