@@ -183,9 +183,13 @@ interface Loggable {
 
 ## Excepții în Java
 
+Toate excepțiile și erorile derivă din clasa `Throwable`, care are două ramuri principale:
+- Error – pentru probleme generate de JVM sau hardware (ex: OutOfMemoryError)
+- Exception – pentru probleme generate de program
+
 În Java, excepțiile sunt obiecte care descriu situații de eroare sau condiții excepționale în timpul execuției. Ele se împart în două categorii:
-- Checked Exceptions: Trebuie fie tratate, fie declarate în semnătura metodei. (Ex.: IOException, SQLException.)
-- Unchecked Exceptions: Extind RuntimeException și nu trebuie tratate obligatoriu. (Ex.: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.)
+- Checked Exceptions (Excepții la compilare): Trebuie fie tratate, fie declarate în semnătura metodei. (Ex.: IOException, SQLException.)
+- Unchecked Exceptions (Excepții la rulare): Extind RuntimeException și nu trebuie tratate obligatoriu. (Ex.: NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException.)
 
 ### Exemple comune de excepții
 

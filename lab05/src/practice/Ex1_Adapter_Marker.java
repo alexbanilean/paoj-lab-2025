@@ -35,7 +35,14 @@ interface Critica {}
 class StergereEveniment extends AdaptorActiune implements Critica {
     @Override
     public void executa() {
-        System.out.println("Eveniment șters.");
+        System.out.println("Eveniment critic șters.");
+    }
+}
+
+class StergereEvenimentNormal extends AdaptorActiune {
+    @Override
+    public void executa() {
+        System.out.println("Eveniment normal șters.");
     }
 }
 
@@ -49,7 +56,7 @@ class Ex1_Adapter_Marker {
     }
 
     public static void main(String[] args) {
-        List<Actiune> lista = List.of(new StergereEveniment(), new StergereEveniment());
+        List<Actiune> lista = List.of(new StergereEveniment(), new StergereEvenimentNormal());
         executaActiuniCritice(lista);
     }
 }
