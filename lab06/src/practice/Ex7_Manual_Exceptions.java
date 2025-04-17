@@ -17,7 +17,7 @@ public class Ex7_Manual_Exceptions {
     public static void main(String[] args) {
         FileReader fr = null;
         try {
-            fr = new FileReader("nonexistent.txt");  // Probabil va arunca FileNotFoundException
+            fr = new FileReader("lab06/src/nonexistent.txt");  // Probabil va arunca FileNotFoundException
             int data = fr.read();
             // Variabila "data" este accesibilă doar în interiorul blocului try
             System.out.println("Primul caracter: " + (char)data);

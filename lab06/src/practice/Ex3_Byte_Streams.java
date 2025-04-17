@@ -15,7 +15,7 @@ import java.io.IOException;
 
 public class Ex3_Byte_Streams {
     public static void main(String[] args) {
-        String filename = "data.bin";
+        String filename = "lab06/src/data.bin";
 
         // Scrierea datelor binare
         try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(filename))) {

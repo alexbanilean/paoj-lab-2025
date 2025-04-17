@@ -7,12 +7,11 @@ package practice;
  * 3. Tratați excepțiile specifice (ex: EOFException, IOException).
  */
 
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 public class Ex4_Random_Access {
     public static void main(String[] args) {
-        String filename = "randomData.bin";
+        String filename = "lab06/src/randomData.bin";
         // Inițializare fișier cu 10 numere întregi
         try (RandomAccessFile raf = new RandomAccessFile(filename, "rw")) {
             for (int i = 0; i < 10; i++) {
@@ -20,6 +19,23 @@ public class Ex4_Random_Access {
             }
         } catch (IOException e) {
             System.err.println("Eroare la inițializare: " + e.getMessage());
+        }
+
+        try (DataInputStream dis = new DataInputStream(new FileInputStream(filename))) {
+            while (true) {
+                try {
+                    int numar = dis.readInt();
+                    System.out.println(numar);
+                } catch (EOFException eof) {
+                    break;
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } finally {
+            System.out.println("-----");
         }
 
         // Modificarea numărului de la poziția 5

@@ -344,41 +344,28 @@ public class SerializareDemo {
 Exemplu `InputStreamReader` / `OutputStreamWriter`:
 ```java
 import java.io.*;
-import java.util.*;
 
-class Student implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private String nume;
-    private int varsta;
+public class ConversieEncoding {
+  public static void main(String[] args) {
+    String mesaj = "Șir cu diacritice: ăîșțâ";
 
-    public Student(String nume, int varsta) {
-        this.nume = nume;
-        this.varsta = varsta;
+    // Scriere cu specificarea encoding-ului
+    try (Writer writer = new OutputStreamWriter(new FileOutputStream("diacritice.txt"), "UTF-8")) {
+      writer.write(mesaj);
+    } catch (IOException e) {
+      e.printStackTrace();
     }
 
-    @Override
-    public String toString() {
-        return nume + " (" + varsta + ")";
+    // Citire cu același encoding
+    try (Reader reader = new InputStreamReader(new FileInputStream("diacritice.txt"), "UTF-8")) {
+      int ch;
+      while ((ch = reader.read()) != -1) {
+        System.out.print((char) ch);
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
     }
-}
-
-public class SerializareDemo {
-    public static void main(String[] args) {
-        List<Student> lista = List.of(new Student("Maria", 22), new Student("Ion", 24));
-
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("studenti.ser"))) {
-            oos.writeObject(lista);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("studenti.ser"))) {
-            List<Student> citit = (List<Student>) ois.readObject();
-            citit.forEach(System.out::println);
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+  }
 }
 ```
 

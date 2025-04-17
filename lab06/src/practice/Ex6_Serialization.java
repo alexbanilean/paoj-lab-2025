@@ -34,7 +34,7 @@ class Ex6_Serialization {
                 new Student("Alice", 20),
                 new Student("Bob", 22)
         );
-        String filename = "students.ser";
+        String filename = "lab06/src/students.ser";
 
         // Serializare
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {

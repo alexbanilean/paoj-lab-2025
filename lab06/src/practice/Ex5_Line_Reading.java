@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class Ex5_Line_Reading {
     public static void main(String[] args) {
-        try (BufferedReader br = new BufferedReader(new FileReader("text.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("lab06/diacritice.txt"))) {
             String line;
             int count = 1;
             while ((line = br.readLine()) != null) {
