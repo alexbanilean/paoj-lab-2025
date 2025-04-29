@@ -66,12 +66,12 @@ public class LambdaDemo {
 ### Principalele Interfețe Funcționale
 
 
-| Interfață funcțională | Signatură           | Descriere                           |
-|----------------------|---------------------|-------------------------------------|
-| `Predicate<T>`        | `boolean test(T t)` | Verifică o condiție                 |
-| `Consumer<T>`         | `void accept(T t)`  | Primește și procesează un element   |
-| `Function<T,R>`       | `R apply(T t)`      | Convertește un tip în altul         |
-| `Supplier<R>`          | `R get()`           | Furnizează un obiect fără parametri |
+| Interfață funcțională | Signatură            | Descriere                           |
+|-----------------------|----------------------|-------------------------------------|
+| `Predicate<T>`        | `boolean test(T t)`  | Verifică o condiție                 |
+| `Consumer<T>`         | `void accept(T t)`   | Primește și procesează un element   |
+| `Function<T,R>`       | `R apply(T t)`       | Convertește un tip în altul         |
+| `Supplier<R>`         | `R get()`            | Furnizează un obiect fără parametri |
 
 
 Exemplu:
@@ -178,24 +178,27 @@ Exemplu:
 ```java
 public class RefsDemo {
     public static void main(String[] args) {
-        List<String> list = List.of("a","bb","ccc");
-        // 1. statică
-        list.sort(Comparator.comparingInt(String::length));
-        
-        // 2. instanță - obiect particular
-        String prefix = "-> ";
-        Consumer<String> c = prefix::concat;
-        System.out.println(c.apply("test")); // -> test
-        
-        // 3. instanță - obiect arbitrar
-        BiFunction<String,Integer,String> subsir1 = (a,b) -> a.substring(b);
-        BiFunction<String,Integer,String> subsir2 = String::substring;
-        System.out.println(subsir1.apply("test123", 0, "123"));
-        System.out.println(subsir2.apply("test123", 0, "123"));
-        
-        // 4. constructor String
-        Function<char[],String> fromChars = String::new;
-        System.out.println(fromChars.apply(new char[]{'x','y'})); // "xy"
+      ArrayList<String> list = new ArrayList<>(Arrays.asList("a", "bb", "ccc"));
+
+      // 1. statică
+      list.sort(Comparator.comparingInt(String::length).reversed());
+      System.out.println(list);
+
+      // 2. instanță - obiect particular
+      StringBuilder sb = new StringBuilder("Hello");
+      Consumer<String> adauga = sb::append;
+      adauga.accept(", world!");
+      System.out.println(sb);
+
+      // 3. instanță - obiect arbitrar
+      BiFunction<String,Integer,String> subsir1 = (a, b) -> a.substring(b);
+      BiFunction<String,Integer,String> subsir2 = String::substring;
+      System.out.println(subsir1.apply("test123", 0));
+      System.out.println(subsir2.apply("test123", 0));
+
+      // 4. constructor String
+      Function<char[],String> fromChars = String::new;
+      System.out.println(fromChars.apply(new char[]{'x','y'})); // "xy"
     }
 }
 ```
