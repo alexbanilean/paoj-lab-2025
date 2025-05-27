@@ -90,8 +90,8 @@ public class Ex4_PingPong extends JFrame {
         }
 
         // Parametri AI pentru realism
-        private final int AI_MAX_SPEED = 4;
-        private final int AI_REACTION_DELAY = 10; // număr de frame-uri întârziere
+        private final int AI_MAX_SPEED = 10;
+        private final int AI_REACTION_DELAY = 5; // număr de frame-uri întârziere
         private int reactionCounter = 0;
         private int targetY = HEIGHT / 2; // poziția țintă cu decalaj
 
@@ -142,7 +142,7 @@ public class Ex4_PingPong extends JFrame {
                 int predictedY = predictBallY();
 
                 // Introducem un offset aleator pentru a simula erori umane
-                int errorMargin = 15; // pixeli decalaj max
+                int errorMargin = 30; // pixeli decalaj max
                 int randomOffset = (int)(Math.random() * 2 * errorMargin) - errorMargin;
 
                 targetY = predictedY - PADDLE_HEIGHT / 2 + randomOffset;

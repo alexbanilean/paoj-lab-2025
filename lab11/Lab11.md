@@ -85,10 +85,10 @@ Ciclul de viață al unei pagini JSP este următorul:
 - **Exception** – obiect de tip `Exception` asociat paginii JSP.
 
 În afara obiectelor predefinite menționate anterior, unei pagini JSP îi este asociat, pe parcursul întregului
-său ciclu de viață, un obiect application. Practic, obiectul application este creat în momentul
+său ciclu de viață, un obiect `application`. Practic, obiectul `application` este creat în momentul
 instanțierii servlet-ului asociat paginii JSP (apelarea metodei jspInit()) și este distrus în momentul
 distrugerii servlet-ului asociat (apelarea metodei jspDestroy()). Folosind acest obiect predefinit, se pot
-accesa valorile unor parametri impliciți de configurare din fișierul web.xml sau se pot crea și manipula
+accesa valorile unor parametri impliciți de configurare din fișierul `web.xml` sau se pot crea și manipula
 parametri dedicați. Manipularea acestor parametri se realizează folosind următoarele două metode:
 - `application.setAttribute(String Key, Object Value)`;
 - `application.getAttribute(String Key)`;
@@ -178,7 +178,7 @@ Exemplu:
 - pachet de clase dedicat proiectării unei interfețe grafice
 - bazat pe tratarea evenimentelor generate de interacțiunea utilizatorului cu interfața grafică
 - crearea unei componente grafice va fi delegată către sistemul de operare
-- avantaje: 
+- avantaje:
   - viteză bună de executare
   - flexibilitate din punct de vedere al sistemului de operare utilizat
 - dezavantaje:
@@ -188,9 +188,9 @@ Exemplu:
 ### Arhitectura AWT
 
 - AWT oferă componente grafice de bază precum butoane, etichete, câmpuri de text, meniuri, liste și containere.
-  Aceste componente sunt clase care extind clasa de bază Component (ex: `Button`, `Label`, `TextField`, `TextArea`, `List`, `Checkbox`, `Choice`).
+  Aceste componente sunt clase care extind clasa de bază `Component` (ex: `Button`, `Label`, `TextField`, `TextArea`, `List`, `Checkbox`, `Choice`).
 - AWT utilizează _peer classes_, adică pentru fiecare componentă Java există o implementare echivalentă la nivel de sistem de operare. 
-  De exemplu, un Button AWT corespunde unui buton nativ Windows sau macOS. Acest mecanism se numește delegare la platformă.
+  De exemplu, un `Button` AWT corespunde unui buton nativ Windows sau macOS. Acest mecanism se numește delegare la platformă.
 - Principalele clase AWT: `Component`, `Container`, `Toolkit`
 - AWT definește ferestre de nivel superior, care pot fi independente sau modale:
   - `Frame` – fereastră principală de aplicație.
